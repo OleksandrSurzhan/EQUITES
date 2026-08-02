@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -96,7 +97,14 @@ export function SiteHeader() {
       <header className="site-header" data-scrolled={isScrolled ? "true" : "false"}>
         <div className="content-container site-header-inner">
           <Link href="/" className="site-logo" aria-label="EQUITES home">
-            EQUITES
+            <Image
+              src="/logo.png"
+              alt="EQUITES"
+              width={310}
+              height={62}
+              priority
+              className="site-logo-image"
+            />
           </Link>
 
           <nav className="site-nav-desktop" aria-label="Primary navigation">
@@ -112,13 +120,6 @@ export function SiteHeader() {
           </nav>
 
           <div className="site-header-actions">
-            <Link
-              href="#contact"
-              className="site-header-cta site-header-cta-desktop inline-flex min-h-[3.25rem] items-center justify-center rounded-[var(--radius-md)] border border-[var(--color-border-subtle)] px-[var(--space-lg)] text-[var(--type-small)] font-medium tracking-[0.01em] text-[var(--color-text-primary)] transition-colors duration-[var(--motion-duration-fast)] ease-[var(--motion-ease-standard)] hover:border-[var(--color-border-strong)]"
-            >
-              Start a Conversation
-            </Link>
-
             <button
               ref={menuButtonRef}
               type="button"
@@ -169,14 +170,6 @@ export function SiteHeader() {
                 ))}
               </ul>
             </nav>
-
-            <Link
-              href="#contact"
-              className="site-header-cta inline-flex min-h-[3.25rem] items-center justify-center rounded-[var(--radius-md)] border border-[var(--color-border-subtle)] px-[var(--space-lg)] text-[var(--type-small)] font-medium tracking-[0.01em] text-[var(--color-text-primary)] transition-colors duration-[var(--motion-duration-fast)] ease-[var(--motion-ease-standard)] hover:border-[var(--color-border-strong)]"
-              onClick={closeMenu}
-            >
-              Start a Conversation
-            </Link>
           </div>
         </div>
       ) : null}

@@ -11,8 +11,8 @@
   --color-text-muted: #8d867c;
   --color-border-subtle: #262626;
   --color-border-strong: #3a3a3a;
-  --color-accent: #7f9ab0;
-  --color-accent-hover: #91abc1;
+  --color-accent: #c9a15f;
+  --color-accent-hover: #d7b171;
   --color-focus-ring: color-mix(in srgb, var(--color-accent) 62%, white 38%);
 
   /* Typography system */
@@ -207,12 +207,17 @@ svg {
 
 .site-logo {
   justify-self: start;
-  font-size: var(--type-small);
-  font-weight: 600;
-  line-height: 1;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--color-text-primary);
+  display: inline-flex;
+  align-items: center;
+  min-height: 62px;
+}
+
+.site-logo-image {
+  width: auto;
+  height: 62px;
+  transform: scale(1.6);
+  transform-origin: left center;
+  object-fit: contain;
 }
 
 .site-nav-desktop {
@@ -349,12 +354,14 @@ svg {
     display: block;
   }
 
-  .site-header-cta-desktop {
-    display: inline-flex;
-  }
-
   .site-menu-button {
     display: none;
+  }
+}
+
+@media (max-width: 40rem) {
+  .site-logo-image {
+    height: 44px;
   }
 }
 
